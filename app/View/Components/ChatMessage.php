@@ -33,6 +33,8 @@ class ChatMessage extends Component
         $pseudo = User::query()->find($this->idUser)->name;
         if ($this->type == 1) {
             $pseudo .= " : ";
+        } else {
+            $pseudo .= "   ";
         }
         $message = $this->message;
         $type = $this->type;

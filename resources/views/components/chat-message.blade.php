@@ -1,10 +1,9 @@
-<div class="flex bg-gray-600 p-1 w-full h-12 mb-1 relative">
-    <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+<div class="flex bg-gray-600 p-1 w-full h-auto min-h-12 mb-0.5 relative">
+    <img class="inline-block h-full w-10 rounded-full ring-2 ring-white"
          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-         alt="">
+         alt="avatar">
     <div class="text-white m-2 flex">
-        <div class="font-bold">{{$pseudo}}</div>
-        <div class="ml-1">{{$message}}</div>
+        <div class="ml-1 mr-6" style="word-wrap: normal"><span class="font-bold">{{$pseudo}}</span>{{$message}}</div>
     </div>
     <div class="text-gray-50 absolute right-0 inset-y-0">
         @if($type == 1)
