@@ -12,15 +12,17 @@ class PlayerJoined implements ShouldBroadcast
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $id;
+    private $channel;
 
-    public function __construct($id)
+    public function __construct($id, $channel)
     {
         $this->id = $id;
+        $this->channel = $channel;
     }
 
     public function broadcastOn()
     {
-        return ['my-channel'];
+        return [$this->channel];
     }
 
     public function broadcastAs()

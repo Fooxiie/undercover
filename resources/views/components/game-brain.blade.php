@@ -7,7 +7,7 @@
         cluster: 'eu'
     });
 
-    const channel = pusher.subscribe('my-channel');
+    const channel = pusher.subscribe('{{ collect(request()->segments())->last() }}');
     channel.bind('playerJoined', function (data) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
@@ -48,7 +48,7 @@
     function sendChat() {
         var chat = document.getElementById('input-chat');
         var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", '{{route('send.message')}}?message=' + chat.value,
+        xhttp.open("GET", '{{route('send.message')}}?message=' + chat.value + "&channel=" + '{{ collect(request()->segments())->last() }}',
             true);
         xhttp.send();
         chat.value = "";

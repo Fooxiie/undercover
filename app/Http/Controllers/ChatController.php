@@ -18,6 +18,6 @@ class ChatController extends Controller
 
     public function sendMessage(Request $request)
     {
-        event(new NewChatMessage(Auth::id(), $request->query('message')));
+        event(new NewChatMessage(Auth::id(), $request->query('message'), $request->query('channel')));
     }
 }

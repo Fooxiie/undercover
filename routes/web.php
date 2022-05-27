@@ -25,7 +25,8 @@ Route::get('/dashboard', function () {
     return view('dashboard', compact('user'));
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/play', [GameController::class, 'show'])->middleware(['auth'])->name('game');
+Route::get('/play/{roomid}', [GameController::class, 'show'])->middleware(['auth'])->name('game');
+Route::get('/create/play', [GameController::class, 'create'])->middleware(['auth'])->name('game.create');
 
 Route::get('/render/message', [ChatController::class, 'render_message'])->name('render.message');
 Route::get('/send/message', [ChatController::class, 'sendMessage'])->name('send.message');
