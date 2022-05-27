@@ -11,8 +11,12 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     You're logged in {{$user}}!
                 </div>
-                <div id="chat">
-                    <x-chat-message message="test" idUser="1" type="1"></x-chat-message>
+                <div id="chat" class="absolute inset-y-0 right-0
+                bg-gray-500 shadow-lg w-1/5">
+                    <x-chat-message message="test (Render instant)" idUser="1"
+                                    type="1"></x-chat-message>
+                    <x-chat-message message="test (Render instant)" idUser="1"
+                                    type="1"></x-chat-message>
                 </div>
             </div>
         </div>

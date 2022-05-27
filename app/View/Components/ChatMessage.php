@@ -35,6 +35,8 @@ class ChatMessage extends Component
             $pseudo .= " : ";
         }
         $message = $this->message;
-        return view('components.chat-message', compact('pseudo', 'message'));
+        $type = $this->type;
+        return view('components.chat-message', compact('pseudo', 'message',
+            'type'));
     }
 }
