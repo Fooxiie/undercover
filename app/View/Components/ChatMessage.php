@@ -34,6 +34,7 @@ class ChatMessage extends Component
         if ($this->type == 1) {
             $pseudo .= " : ";
         }
-        return view('components.chat-message', compact('pseudo'));
+        $message = $this->message;
+        return view('components.chat-message', compact('pseudo', 'message'));
     }
 }

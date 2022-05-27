@@ -11,11 +11,11 @@ class PlayerJoined implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $pseudo;
+    public $id;
 
-    public function __construct($pseudo)
+    public function __construct($id)
     {
-        $this->pseudo = $pseudo;
+        $this->id = $id;
     }
 
     public function broadcastOn()

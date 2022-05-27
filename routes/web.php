@@ -1,5 +1,7 @@
 <?php
 
+use App\Events\PlayerJoined;
+use App\Http\Controllers\ChatController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +21,12 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
+    $id = Auth::user()->id;
     $user = Auth::user()->name;
-    event(new \App\Events\PlayerJoined($user));
-    return view('dashboard', compact('user'));
+    event(new PlayerJoined($id));
+    return view('dashboard', compact('id', 'user'));
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/render/message', [ChatController::class, 'render_message'])->name('render.message');
 
 require __DIR__ . '/auth.php';

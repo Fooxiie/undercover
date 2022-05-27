@@ -28,14 +28,16 @@
 
         const channel = pusher.subscribe('my-channel');
         channel.bind('playerJoined', function (data) {
-            console.log(JSON.stringify(data));
-            let newMessage = document.createElement("x-chat-message");
-            newMessage.setAttribute('message', JSON.stringify(data.pseudo))
-            newMessage.setAttribute('idUser', 1)
-            newMessage.setAttribute('type', 1)
-            console.log(newMessage);
-            //TODO DEMANDER EN AJAX LE RENDER DU MESSAGE POUR LAPPEND
-            document.getElementById('chat').appendChild(newMessage);
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    document.getElementById('chat').innerHTML += this.responseText;
+                }
+            }
+            xhttp.open("GET", '{{route('render.message')}}?idUser=' + data.id +
+                '&message=' + '{{__('custom.joined')}}' + '&type=2',
+                true);
+            xhttp.send();
         });
     </script>
 </x-app-layout>
