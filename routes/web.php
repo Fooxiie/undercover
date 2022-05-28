@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\DiscordController;
 use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -30,5 +31,8 @@ Route::get('/create/play', [GameController::class, 'create'])->middleware(['auth
 
 Route::get('/render/message', [ChatController::class, 'render_message'])->name('render.message');
 Route::get('/send/message', [ChatController::class, 'sendMessage'])->name('send.message');
+
+Route::get('/auth/redirect', [DiscordController::class, 'redirect'])->name('discord.redirect');
+Route::get('/auth/callback', [DiscordController::class, 'callback'])->name('discord.callback');
 
 require __DIR__ . '/auth.php';
