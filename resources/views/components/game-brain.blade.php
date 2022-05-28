@@ -38,13 +38,6 @@
         xhttp.send();
     });
 
-    let chatInput = document.getElementById('input-chat');
-    chatInput.addEventListener("keyup", (event) => {
-        if (event.key === "Enter") {
-            sendChat();
-        }
-    });
-
     function sendChat() {
         var chat = document.getElementById('input-chat');
         var xhttp = new XMLHttpRequest();
@@ -52,5 +45,28 @@
             true);
         xhttp.send();
         chat.value = "";
+    }
+</script>
+
+<script>
+    let chatInput = document.getElementById('input-chat');
+    chatInput.addEventListener("keyup", (event) => {
+        if (event.key === "Enter") {
+            sendChat();
+        }
+    });
+</script>
+
+<script>
+    function myFunction() {
+        let copyText = document.getElementById("link");
+        navigator.clipboard.writeText(copyText.innerHTML);
+        let tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copied !"
+    }
+
+    function outFunc() {
+        var tooltip = document.getElementById("myTooltip");
+        tooltip.innerHTML = "Copy to clipboard";
     }
 </script>
