@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -423,19 +423,5 @@
         </div>
     </div>
 </div>
-<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
-<script>
-    // Enable pusher logging - don't include this in production
-    Pusher.logToConsole = true;
-
-    var pusher = new Pusher('a7cdbbc381c291ed0746', {
-        cluster: 'eu'
-    });
-
-    var channel = pusher.subscribe('my-channel');
-    channel.bind('my-event', function (data) {
-        alert(JSON.stringify(data));
-    });
-</script>
 </body>
 </html>
