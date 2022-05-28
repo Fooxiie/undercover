@@ -18,7 +18,6 @@ class DiscordController extends Controller
     {
         try {
             $discordUser = Socialite::driver('discord')->user();
-            dd($discordUser);
         } catch (InvalidStateException) {
             return redirect(route('discord.redirect'));
         }
