@@ -3,6 +3,7 @@
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\DiscordController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\SuggestionController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,8 @@ Route::get('/dashboard', function () {
 
 Route::get('/play/{roomid}', [GameController::class, 'show'])->middleware(['auth'])->name('game');
 Route::get('/create/play', [GameController::class, 'create'])->middleware(['auth'])->name('game.create');
+
+Route::get('/suggestion', [SuggestionController::class, 'show'])->name('suggestion.show');
 
 Route::get('/render/message', [ChatController::class, 'render_message'])->name('render.message');
 Route::get('/send/message', [ChatController::class, 'sendMessage'])->name('send.message');
