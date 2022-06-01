@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+        <h2 class="font-semibold text-xl text-gray-50 leading-tight">
+            {{ __('Suggestion') }}
         </h2>
     </x-slot>
 
@@ -16,7 +16,7 @@
                         <div>
                             <a class="bg-gray-600 text-white p-2 rounded
                             hover:bg-gray-800"
-                               href="#">Créer</a>
+                               href="{{route('suggestion.create')}}">Créer</a>
                         </div>
                     </div>
 

@@ -14,4 +14,9 @@ class SuggestionController extends Controller
         }
         return view('suggestion.suggestion', compact('suggestions'));
     }
+
+    public function create()
+    {
+        return view('suggestion.suggestion_create');
+    }
 }
