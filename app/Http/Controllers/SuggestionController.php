@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class SuggestionController extends Controller
@@ -18,5 +19,10 @@ class SuggestionController extends Controller
     public function create()
     {
         return view('suggestion.suggestion_create');
+    }
+
+    public function submit(Request $request)
+    {
+        dd($request);
     }
 }

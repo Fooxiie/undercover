@@ -32,6 +32,7 @@ Route::get('/create/play', [GameController::class, 'create'])->middleware(['auth
 
 Route::get('/suggestion', [SuggestionController::class, 'show'])->name('suggestion.show');
 Route::get('/suggestion/create', [SuggestionController::class, 'create'])->name('suggestion.create');
+Route::post('/suggestion/create/submit', [SuggestionController::class, 'submit'])->name('suggestion.submit');
 
 Route::get('/render/message', [ChatController::class, 'render_message'])->name('render.message');
 Route::get('/send/message', [ChatController::class, 'sendMessage'])->name('send.message');
