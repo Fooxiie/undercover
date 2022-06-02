@@ -38,8 +38,19 @@
                                 </svg>
                             </button>
                             <br/>
+                            <input type="text" class="rounded-lg" id="themes[]"
+                                   name="themes[]" required="required">
+                            <input type="text" class="rounded-lg" id="themes[]"
+                                   name="themes[]" required="required">
+                            <input type="text" class="rounded-lg" id="themes[]"
+                                   name="themes[]" required="required">
+                            <input type="text" class="rounded-lg" id="themes[]"
+                                   name="themes[]" required="required">
+                            <input type="text" class="rounded-lg" id="themes[]"
+                                   name="themes[]" required="required">
                         </div>
-                        <span class="text-gray-200" id="rules">Il doit y
+                        <span class="text-red-300 animate-pulse" id="rules">Il
+                            doit y
                             avoir au
                             minimum 5
                             thèmes

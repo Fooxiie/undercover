@@ -15,8 +15,13 @@
 
     <!-- Scripts -->
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
+          rel="stylesheet">
 </head>
-<body class="font-sans antialiased">
+<body class="font-sans antialiased" style="font-family: 'Kanit', sans-serif;">
 <div class="min-h-screen bg-gray-500 flex">
     <div class="w-full">
         @yield('content')
