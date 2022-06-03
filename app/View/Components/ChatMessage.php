@@ -39,7 +39,7 @@ class ChatMessage extends Component
         }
         $message = $this->message;
         $type = $this->type;
-        $avatar = $user->avatar;
+        $avatar = $user->discord_avatar;
         return view('components.chat-message', compact('pseudo', 'message',
             'type', 'avatar'));
     }
