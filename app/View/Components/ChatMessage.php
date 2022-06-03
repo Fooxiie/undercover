@@ -30,7 +30,8 @@ class ChatMessage extends Component
      */
     public function render()
     {
-        $pseudo = User::query()->find($this->idUser)->name;
+        $user = User::query()->find($this->idUser);
+        $pseudo = $user->name;
         if ($this->type == 1) {
             $pseudo .= " : ";
         } else {
@@ -38,7 +39,8 @@ class ChatMessage extends Component
         }
         $message = $this->message;
         $type = $this->type;
+        $avatar = $user->avatar;
         return view('components.chat-message', compact('pseudo', 'message',
-            'type'));
+            'type', 'avatar'));
     }
 }
