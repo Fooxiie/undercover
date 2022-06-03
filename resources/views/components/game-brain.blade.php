@@ -40,11 +40,13 @@
 
     function sendChat() {
         var chat = document.getElementById('input-chat');
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", '{{route('send.message')}}?message=' + chat.value + "&channel=" + '{{ collect(request()->segments())->last() }}',
-            true);
-        xhttp.send();
-        chat.value = "";
+        if (chat.value.trim() !== "") {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", '{{route('send.message')}}?message=' + chat.value + "&channel=" + '{{ collect(request()->segments())->last() }}',
+                true);
+            xhttp.send();
+            chat.value = "";
+        }
     }
 </script>
 
