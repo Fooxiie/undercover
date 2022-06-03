@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Events\PlayerJoined;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class GameController extends Controller
 {
@@ -18,7 +20,18 @@ class GameController extends Controller
 
     public function create()
     {
-        return redirect(route('game', ['roomid' => self::generateCode()]));
+        $room = self::generateCode();
+        echo Http::post('https://discord.com/api/webhooks/982179970677882922/99b-Lfv1Jbj7u7HXnW5qkjv3b3UixmsVxCqAFk__8sj_bKg553wme446ppNP8Z0EC8IR', [
+            'content' => '',
+            'embeds' => [
+                [
+                    'title' => Auth::user()->name." a créé une partie",
+                    'description' => "Numéro de salle : ".$room,
+                    'color' => '16096779',
+                ]
+            ],
+        ])->status();
+        return redirect(route('game', ['roomid' => $room]));
     }
 
     private static function generateCode()
