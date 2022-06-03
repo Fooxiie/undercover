@@ -56,9 +56,10 @@
                             thèmes
                             disponibles</span>
                         <div class="w-full text-right">
-                            <input type="submit" class="bg-plot p-2 text-white
+                            <input type="submit" class="bg-plot p-2 text-black
                             rounded-lg
-                            m-2 hover:bg-gray-800 cursor-pointer"/>
+                            m-2 hover:bg-gray-800 hover:text-white
+                            cursor-pointer"/>
                         </div>
                     </form>
                 </div>
