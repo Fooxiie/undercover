@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\PlayerJoined;
+use App\View\Components\GamePlayer;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
@@ -43,5 +44,10 @@ class GameController extends Controller
             $result .= $base[$letter];
         }
         return $result;
+    }
+
+    public function render() {
+        $message = new GamePlayer(Auth::id());
+        return $message->render();
     }
 }
