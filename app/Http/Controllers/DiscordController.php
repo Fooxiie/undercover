@@ -32,11 +32,14 @@ class DiscordController extends Controller
         } else {
             $newUser = new User();
             $newUser->name = $discordUser->getName();
-            $newUser->email = $discordUser->getEmail();
+            $newUser->email = sha1($discordUser->getEmail());
             $newUser->discord_id = $discordUser->getId();
             $newUser->discord_token = $discordUser->token;
             $newUser->discord_refresh_token = $discordUser->refreshToken;
-            $newUser->discord_avatar = $discordUser->getAvatar();
+            $newUser->discord_avatar = ($discordUser->getAvatar() == null) ?
+                "https://www.gravatar.com/avatar/".
+                md5(strtolower(trim($discordUser->getEmail()))).
+                "?s=48&d=retro" : $discordUser->getAvatar();
             $newUser->save();
             $user = $newUser;
         }
