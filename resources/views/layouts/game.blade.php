@@ -21,28 +21,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
           rel="stylesheet">
 </head>
-<body class="font-sans antialiased" style="font-family: 'Kanit', sans-serif;">
-<div class="min-h-screen bg-gray-500 flex">
+<body class="font-sans antialiased absolute m-0 overflow-hidden top-0
+bottom-0 w-full" style="font-family: 'Kanit', sans-serif;">
+<div class="min-h-screen bg-gray-800 flex">
     <div class="w-full">
         @yield('content')
     </div>
-    <div class="w-1/3 h-full max-h-full min-h-screen border-l-4 border-gray-700 static relative">
-        <div id="chat" class="bg-gray-500 shadow-lg mb-12 overflow-auto scrollbar h-full w-full">
+    <div class="w-1/3 h-full max-h-full min-h-screen border-l-2 border-plot
+    static relative bg-gray-700">
+        <div id="chat"
+             class="bg-gray-500 shadow-lg mb-12 overflow-auto scrollbar h-full w-full">
         </div>
         <div id="chat-input"
-             class="absolute bottom-0 right-0 h-12 bg-gray-700 flex align-baseline w-full">
+             class="absolute bottom-0 right-0 h-20 bg-gray-900 flex
+             align-baseline w-full">
             <input id="input-chat" placeholder="message ..."
-                   class="w-full p-2"/>
-            <button class="text-gray-200 justify-center w-10"
-                    onclick="sendChat()">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6
-                        w-full"
-                     fill="none" viewBox="0 0 24 24"
-                     stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-                </svg>
-            </button>
+                   class="w-full px-4 p-2 mx-4 my-4 rounded-full"/>
+            {{--            <button class="text-gray-200 justify-center w-10"--}}
+            {{--                    onclick="sendChat()">--}}
+            {{--                <svg xmlns="http://www.w3.org/2000/svg" class="h-6--}}
+            {{--                        w-full"--}}
+            {{--                     fill="none" viewBox="0 0 24 24"--}}
+            {{--                     stroke="currentColor" stroke-width="2">--}}
+            {{--                    <path stroke-linecap="round" stroke-linejoin="round"--}}
+            {{--                          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>--}}
+            {{--                </svg>--}}
+            {{--            </button>--}}
         </div>
     </div>
 </div>

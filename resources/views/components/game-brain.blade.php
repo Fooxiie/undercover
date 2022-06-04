@@ -3,6 +3,9 @@
     // Enable pusher logging - don't include this in production
     Pusher.logToConsole = true;
 
+    let players = [];
+    let gamingStarted = false;
+
     const pusher = new Pusher('a7cdbbc381c291ed0746', {
         cluster: 'eu'
     });
@@ -71,4 +74,11 @@
         var tooltip = document.getElementById("myTooltip");
         tooltip.innerHTML = "Copy to clipboard";
     }
+
+
+    function intro_modal_close() {
+        let modal = document.getElementById('intro-modal');
+        modal.classList.add('hidden');
+    }
+
 </script>

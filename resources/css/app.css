@@ -117,8 +117,6 @@
 
 #container {
     background-color: #1f2937;
-    width: 510px;
-    max-height: 500px;
     border-radius: 50px;
     padding: 1em;
     display: flex;
