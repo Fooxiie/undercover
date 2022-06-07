@@ -36,6 +36,7 @@ Route::get('/suggestion/create', [SuggestionController::class, 'create'])->name(
 Route::post('/suggestion/create/submit', [SuggestionController::class, 'submit'])->name('suggestion.submit');
 
 Route::get('/render/message', [ChatController::class, 'render_message'])->name('render.message');
+Route::get('/render/notif', [ChatController::class, 'render_notif'])->name('render.notif');
 Route::get('/send/message', [ChatController::class, 'sendMessage'])->name('send.message');
 
 Route::get('/auth/redirect', [DiscordController::class, 'redirect'])->name('discord.redirect');

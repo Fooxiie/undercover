@@ -100,7 +100,7 @@
 .player {
     background-color: #18202b;
     height: 55px;
-    width: 50%;
+    width: 150px;
     border-radius: 50px;
     color: white;
     margin-bottom: 10px;
@@ -108,7 +108,7 @@
     text-align: left;
     padding: 5px 5px 5px 6px;
     block-size: fit-content;
-    flex: 1 1 160px;
+    flex: 50%;
 }
 
 .player-inbox {

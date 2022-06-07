@@ -3,12 +3,15 @@
 @section('content')
     <div class="bg-gray-700 w-full p-5 flex border-t-2 border-plot">
         <input type="text"
-               class="text-center text-gray-600 bg-gray-200 rounded-full"
+               class="text-center text-gray-600 bg-gray-200 rounded-full hidden"
                readonly id="hint-word"
                value="-"/>
+        <button type="button" class="bg-plot rounded p-1 ml-2"
+                onclick="join_game()" id="btn_join_game"
+        >Rejoindre
+        </button>
     </div>
     <div class="w-full h-full text-white" id="container">
-
     </div>
     <div class="modal fixed w-full h-full top-0 left-0 flex items-center
     justify-center" id="intro-modal">

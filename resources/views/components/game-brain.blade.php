@@ -20,8 +20,7 @@
                 scroll_to_bottom.scrollTop = scroll_to_bottom.scrollHeight;
             }
         }
-        xhttp.open("GET", '{{route('render.message')}}?idUser=' + data.id +
-            '&message=' + '{{__('custom.joined')}}' + '&type=2',
+        xhttp.open("GET", '{{route('render.notif')}}?idUser=' + data.id,
             true);
         xhttp.send();
     });
@@ -40,6 +39,24 @@
             true);
         xhttp.send();
     });
+
+    function join_game() {
+        let btn = document.getElementById('btn_join_game');
+        btn.classList.add('hidden');
+
+        let hintword = document.getElementById('hint-word');
+        hintword.classList.remove('hidden');
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById('container').innerHTML += this.responseText;
+            }
+        }
+        xhttp.open("GET", '{{route('game.render')}}',
+            true);
+        xhttp.send();
+    }
 
     function sendChat() {
         var chat = document.getElementById('input-chat');
