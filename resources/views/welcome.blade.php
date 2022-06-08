@@ -1,14 +1,29 @@
 <x-guest-layout>
     <div class="grid place-items-center h-screen gap-0">
-        <div class="w-1/2">
+        <div class="w-1/2 flex">
+            <x-application-logo class="w-36"></x-application-logo>
             <h1 style="font-family: 'Patrick Hand', cursive;"
                 class="text-8xl text-plot bg-gray-900 w-full text-center
             py-4 rounded-full select-none">
                 Undercover
             </h1>
+            <x-application-logo class="w-36"></x-application-logo>
         </div>
         <div class="grid grid-cols-2 gap-8 w-10/12 -mt-48">
             <div class="-skew-y-6">
+                <div class="w-full bg-gray-300 text-gray-900 p-5 rounded-xl">
+                    Undercover est un jeux tiré des steams de <a
+                        href="https://www.twitch.tv/sofyanlive"
+                        class="underline">Sofyan</a><br/>
+                    Je vous invite vivement à regarder les vidéos de
+                    rediffusion en suivant ce lien : <a href="https://youtu
+                    .be/uobeIxTO5r0" class="underline">Lien youtube</a><br/>
+                    Ceci est un jeux de "fan" à jouer entre amis. Alors
+                    amusez-vous !<br/><br/>
+                    Ce jeux est actuellement en bêta et peut rencontrer
+                    plusieurs soucis.
+                </div>
+
             </div>
             <div class="rounded-2xl w-full border-4 bg-gray-700
                     border-plot p-4 skew-y-12">
