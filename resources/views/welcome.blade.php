@@ -9,15 +9,17 @@
             </h1>
             <x-application-logo class="w-36"></x-application-logo>
         </div>
-        <div class="grid grid-cols-2 gap-8 w-10/12 -mt-48">
+        <div class="grid grid-cols-2 gap-8 w-10/12 xl:-mt-48">
             <div class="-skew-y-6">
                 <div class="w-full bg-gray-300 text-gray-900 p-5 rounded-xl">
                     Undercover est un jeux tiré des steams de <a
                         href="https://www.twitch.tv/sofyanlive"
-                        class="underline">Sofyan</a><br/>
+                        class="underline" target="_blank">Sofyan</a><br/>
                     Je vous invite vivement à regarder les vidéos de
-                    rediffusion en suivant ce lien : <a href="https://youtu
-                    .be/uobeIxTO5r0" class="underline">Lien youtube</a><br/>
+                    rediffusion en suivant ce lien :
+                    <a target="_blank" href="https://youtu.be/uobeIxTO5r0"
+                       class="underline">
+                        Lien youtube</a><br/>
                     Ceci est un jeux de "fan" à jouer entre amis. Alors
                     amusez-vous !<br/><br/>
                     Ce jeux est actuellement en bêta et peut rencontrer
@@ -26,7 +28,7 @@
 
             </div>
             <div class="rounded-2xl w-full border-4 bg-gray-700
-                    border-plot p-4 skew-y-12">
+                    border-plot p-4 skew-y-6">
                 <div class="bg-gray-300 p-3 w-1/2 text-black mb-2 rounded-xl">
                     Viens jouer à Undercover !<br/>
                     Dépêche toi ! La game va bientôt commencer.
@@ -39,12 +41,8 @@
                     rounded-xl">
                     Leeez go !
                 </div>
-                <div class="bg-blue-400 p-3 w-1/2 text-black mb-2 text-right
-                    float-right rounded-xl">
-                    Attends moi !
-                </div>
                 <a class="inline-block rounded-full text-black p-2
-                    text-right w-full"
+                    text-right w-full mt-4"
                    @auth
                    href="{{ route('dashboard') }}"
                    @else
